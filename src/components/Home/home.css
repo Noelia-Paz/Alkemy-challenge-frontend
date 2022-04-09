@@ -1,0 +1,46 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  background: grey;
+}
+
+.textoBoton {
+  font-size: 25px;
+  
+}
+
+.botonInsertar {
+  border: none;
+  background-color: rgb(10, 215, 10);
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+.boton1 {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px;
+}
+
+.pie {
+  background: wheat;
+  padding: 2px;
+}
+.texto-pie {
+  text-align: center;
+  font-size: small;
+  padding: 5px;
+}

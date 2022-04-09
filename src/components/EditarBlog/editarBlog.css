@@ -1,0 +1,66 @@
+.contenido {
+  margin-left: 360px;
+  border-radius: 15px;
+  background-color: lightpink;
+  padding: 30px;
+  width: 50%;
+}
+
+.base{
+  
+  width: 100%;
+  height: 940px;
+  padding: 110px;
+  background:khaki;
+}
+
+.input-blog {
+  width: 100%;
+  border: 4px solid rebeccapurple;
+  margin: 6px;
+  height: 60px;
+}
+
+.texto-blog {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 40px;
+  font-weight: 700px;
+  color: tomato;
+}
+
+.boton-form {
+  background-color: tomato;
+  border: none;
+  margin: 20px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.label-blog {
+  color: black;
+  margin: 7px;
+  font-size: 20px;
+}
+.boton-blog{
+  display: flex;
+  justify-content: flex-end;
+
+}
+.atras{
+  background-color: yellow;
+  border: none;
+  margin: 20px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+.msg{
+  color: red;
+}
