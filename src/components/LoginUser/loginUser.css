@@ -1,0 +1,67 @@
+.divContenedor{
+    display: grid;
+    flex-wrap: wrap;
+    justify-items: center;
+    padding: 20px;
+}
+
+.textoLogin{
+    
+    font-family:emoji;
+    font-size: 25px;
+    color: blue;
+}
+
+.formLogin{
+    display: grid;
+    flex-wrap: wrap;
+    justify-items: center;
+    background:darkolivegreen;
+    padding: 30px;
+    margin: 5px;
+    border-radius: 20px;
+    width: 560px;
+}
+
+.labelLogin {
+  color: black;
+  margin: 7px;
+  margin-right: 400px;
+  font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.inputLogin{
+  width: 100%;
+  border: 4px solid rgb(236, 171, 148);
+  margin: 15px;
+  height: 60px;
+  
+}
+.mensajeUser{
+  color:darkred;
+}
+
+
+.botonIngresar{
+  background-color: blue;
+  border: none;
+  margin: 20px;
+  color: whitesmoke;
+  padding: 7px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.AtrasLogin{
+  background-color:rgb(236, 171, 148) ;
+  border: none;
+  margin: 20px;
+  color: black;
+  padding: 7px 50px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}

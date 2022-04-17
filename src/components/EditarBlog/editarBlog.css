@@ -1,66 +1,73 @@
-.contenido {
-  margin-left: 360px;
-  border-radius: 15px;
-  background-color: lightpink;
-  padding: 30px;
-  width: 50%;
-}
 
 .base{
+  display: grid;
+  flex-wrap: wrap;
+  justify-items: center;
+  padding: 20px;
   
-  width: 100%;
-  height: 940px;
-  padding: 110px;
-  background:khaki;
 }
 
-.input-blog {
-  width: 100%;
-  border: 4px solid rebeccapurple;
-  margin: 6px;
-  height: 60px;
+.textoEditar {
+  font-family:emoji;
+  font-size: 25px;
+  color: lightseagreen;
 }
 
-.texto-blog {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  font-size: 40px;
-  font-weight: 700px;
-  color: tomato;
+.formEditar{
+  display: grid;
+  flex-wrap: wrap;
+  justify-items: center;
+  background:lightslategray;
+  padding: 30px;
+  margin: 5px;
+  border-radius: 20px;
+  width: 560px;
+ 
 }
 
-.boton-form {
-  background-color: tomato;
-  border: none;
-  margin: 20px;
-  color: black;
-  padding: 16px 32px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.label-blog {
+.labelEditar {
   color: black;
   margin: 7px;
+  margin-right: 400px;
   font-size: 20px;
+  font-family:emoji;
 }
-.boton-blog{
-  display: flex;
-  justify-content: flex-end;
 
-}
-.atras{
-  background-color: yellow;
-  border: none;
-  margin: 20px;
-  color: black;
-  padding: 16px 32px;
-  text-decoration: none;
-  cursor: pointer;
-  
+.inputEditar {
+  width: 100%;
+  border: 4px solid lightskyblue;
+  margin: 15px;
+  height: 60px;
 }
 
 .msg{
   color: red;
 }
+
+.botonesBlog{
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.botonAplicar {
+  background-color: lightseagreen;
+  border: none;
+  margin: 20px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.atras{
+  background-color: lavender;
+  border: none;
+  margin: 20px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+

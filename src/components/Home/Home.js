@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAuth0 } from "@auth0/auth0-react";
-
 import "./home.css";
 
-//componentes
 import BlogCard from "../BlogCard/BlogCard";
 import Login from "../Login/Login";
 
-function Home() {
+function Home(props) {
   let navigate = useNavigate();
   const [blogs, setBlogs] = useState([]);
 
@@ -25,12 +22,10 @@ function Home() {
     setBlogs(filteredBlogs);
   };
 
-  const { isAuthenticated } = useAuth0();
-
   return (
     <div className="contenedor">
       <div className="boton1">
-        {isAuthenticated ? (
+        {props.isAuthenticated ? (
           <button
             onClick={() => {
               navigate("/insertar");
@@ -48,7 +43,14 @@ function Home() {
       </div>
       <div className="cards">
         {blogs.map((blog) => {
-          return <BlogCard blog={blog} key={blog.id} deleteBtn={deleteBtn} />;
+          return (
+            <BlogCard
+              blog={blog}
+              key={blog.id}
+              deleteBtn={deleteBtn}
+              isAuthenticated={props.isAuthenticated}
+            />
+          );
         })}
       </div>
       <footer className="pie">

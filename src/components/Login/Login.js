@@ -1,15 +1,20 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 
 import "./login.css";
 
 function Login() {
-  const { loginWithRedirect } = useAuth0();
+  let navigate = useNavigate();
   return (
-    <div className="botonlog">
-      <button className="botonLogin" onClick={() => loginWithRedirect()}>
-        <ion-icon name="person-add-outline"></ion-icon>
-        Login
+    <div className="divLogin">
+      <button
+        className="botonLogin"
+        onClick={() => {
+          navigate("/loginUser");
+        }}
+      >
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <h1 className="textoLogin">Ingresar</h1>
       </button>
     </div>
   );

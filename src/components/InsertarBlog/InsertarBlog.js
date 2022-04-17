@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./insertar.css";
@@ -7,10 +7,6 @@ import { useForm } from "react-hook-form";
 
 function InsertarBlog() {
   let navigate = useNavigate();
-
-  // const [titulo, setTitulo] = useState("");
-  // const [contenido, setContenido] = useState("");
-  // const [imagen, setImagen] = useState("");
 
   const verificarExtensionImagen = (imagen) => {
     const extensionesValidas = ".png, .gif, .jpeg, .jpg";
@@ -39,16 +35,6 @@ function InsertarBlog() {
     }
   };
 
-  // const onChange = (e) => {
-  //   if (e.target.name === "titulo") {
-  //     setTitulo(e.target.value);
-  //   } else if (e.target.name === "contenido") {
-  //     setContenido(e.target.value);
-  //   } else {
-  //     setImagen(e.target.value);
-  //   }
-  // };
-
   const {
     register,
     handleSubmit,
@@ -56,89 +42,84 @@ function InsertarBlog() {
   } = useForm();
 
   return (
-    <div>
-      <p className="texto">Escribe un Nuevo Blog</p>
-      <div>
-        <div className="contenedor-form">
-          <form className="form" onSubmit={handleSubmit(onSubmit)}>
-            <div>
-              <label className="label">Tilulo</label>
-              <input
-                className="input"
-                type="text"
-                name="titulo"
-                placeholder="Escribi un titulo"
-                // onChange={onChange}
-                {...register("titulo", {
-                  required: {
-                    value: true,
-                    message: "El campo es requerido",
-                  },
-                  minLength: {
-                    value: 3,
-                    message: "Escribe al menos 3 caracteres",
-                  },
-                })}
-              />
-              {errors.titulo && (
-                <span className="mensaje">{errors.titulo.message}</span>
-              )}
-            </div>
-            <div>
-              <label className="label">Contenido</label>
-              <input
-                className="input"
-                type="text"
-                name="contenido"
-                placeholder="Escribi un contenido"
-                //onChange={onChange}
-                {...register("contenido", {
-                  required: {
-                    value: true,
-                    message: "El campo no puede estar vacio",
-                  },
+    <div className="contenedor-form">
+      <p className="textoBlog">Escribe un Nuevo Blog</p>
+      <form className="formInsertar" onSubmit={handleSubmit(onSubmit)}>
+        <label className="labelInsertar">Tilulo</label>
+        <input
+          className="inputInsertar"
+          type="text"
+          name="titulo"
+          placeholder="Escribi un titulo"
+          {...register("titulo", {
+            required: {
+              value: true,
+              message: "El campo es requerido",
+            },
+            minLength: {
+              value: 3,
+              message: "Escribe al menos 3 caracteres",
+            },
+          })}
+        />
+        {errors.titulo && (
+          <span className="mensaje">{errors.titulo.message}</span>
+        )}
 
-                  minLength: {
-                    value: 5,
-                    message: "Escribe al menos 5 caracteres",
-                  },
-                })}
-              />
-              {errors.contenido && (
-                <span className="mensaje">{errors.contenido.message}</span>
-              )}
-            </div>
-            <div>
-              <label className="label">Imagen</label>
-              <input
-                className="input"
-                type="url"
-                name="imagen"
-                placeholder="Link de imagen"
-                //onChange={onChange}
-                {...register("imagen", {
-                  required: {
-                    value: true,
-                    message: "El campo es requerido",
-                  },
-                })}
-              />
-              {errors.imagen && (
-                <span className="mensaje">{errors.imagen.message}</span>
-              )}
-            </div>
-            <input className="boton" type="submit" value="Crear" />
-            <button
-              className="boton-volver"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Atras
-            </button>
-          </form>
-        </div>
-      </div>
+        <label className="labelInsertar">Contenido</label>
+        <input
+          className="inputInsertar"
+          type="text"
+          name="contenido"
+          placeholder="Escribi un contenido"
+          {...register("contenido", {
+            required: {
+              value: true,
+              message: "El campo no puede estar vacio",
+            },
+
+            maxLength: {
+              value: 50,
+              message: "El contenido es muy largo",
+            },
+
+            minLength: {
+              value: 5,
+              message: "Escribe al menos 5 caracteres",
+            },
+          })}
+        />
+        {errors.contenido && (
+          <span className="mensaje">{errors.contenido.message}</span>
+        )}
+
+        <label className="labelInsertar">Imagen</label>
+        <input
+          className="inputInsertar"
+          type="url"
+          name="imagen"
+          placeholder="Imagen.jpeg"
+          {...register("imagen", {
+            required: {
+              value: true,
+              message: "El campo es requerido",
+            },
+          })}
+        />
+        {errors.imagen && (
+          <span className="mensaje">{errors.imagen.message}</span>
+        )}
+
+        <input className="botonInsertar" type="submit" value="Crear" />
+        <button
+          className="boton-volver"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Atras
+        </button>
+      </form>
     </div>
   );
 }
